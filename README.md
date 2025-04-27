@@ -71,12 +71,16 @@ SELECT
 FROM RankedRatings
 WHERE rank = 1;
 ```
+**objective**: Identify the most frequently occurring rating for each type of content.
+
 3.**List all movies released in a specific year(e.g. 2020)**
 ```sql
 SELECT *
 FROM netflix
 WHERE release_year = 2020;
 ```
+**objective**: Retrieve all movies released in a specific year.
+
 4.**Find the top 5 countries with the most content on netflix.**
 ```sql
 SELECT *
@@ -92,17 +96,23 @@ WHERE country IS NOT NULL
 ORDER BY total_content DESC
 LIMIT 5;
 ```
+**objective**:Identify the top 5 countries with the highest number of content items.
+
 5.**Identify the longest movie**
 ```sql
 SELECT * FROM netflix
 WHERE type = 'Movie'
 ORDER BY SPLIT_PART(duration, ' ', 1)::INT DESC;
 ```
+**objective**:Find the movie with the longest duration.
+
 6.**Find content added in the last 5 years**
 ```sql
 SELECT* FROM netflix
 WHERE TO_DATE(date_added, 'Month DD, YYYY') >= CURRENT_DATE - INTERVAL '5 years';
 ```
+**objective**:Retrieve content added to Netflix in the last 5 years.
+
 7.**Find all movies/TV shows by Director 'Rajiv Chilaka'**
 ```sql
 SELECT* 
@@ -113,12 +123,16 @@ FROM(
 ) AS t 
 WHERE director_name ='Rajiv Chilaka';
 ```
+**objective**: List all content directed by 'Rajiv Chilaka'.
+
 8.**List all TV shows with more than 5 shows**
 ```sql
 SELECT* FROM netflix
 WHERE type ='TV Show'
  AND SPLIT_PART(duration, ' ', 1)::INT >5;
 ```
+**objective**: Identify TV shows with more than 5 seasons.
+
 9.**Count the number of content Items in each genre**
 ```sql
 SELECT
@@ -127,6 +141,8 @@ SELECT
  FROM netflix
  GROUP BY 1 ;
 ```
+**objective**:Count the number of content items in each genre.
+
 10.**Find each year and the average numbers of content release in india on netflix.**
 ```sql
 SELECT
@@ -143,17 +159,23 @@ SELECT
  ORDER BY avg_release DESC
  LIMIT 5;
 ```
+**objective**: Calculate and rank years by the average number of content releases by India.
+
 11.**List all movies that are Documentaries.**
 ```sql
  SELECT * FROM netflix
  WHERE listed_in LIKE '%Documentaries';
 ```
+**objective**: Retrieve all movies classified as documentaries.
+
 12.**Find all content without a Director.**
 ```sql
 SELECT*
 FROM netflix
 WHERE director IS NULL;
 ```
+**objective**: List content that does not have a director.
+
 13.**Find How many movies actor 'Amitabh Bachchan' appeared in the last 10 years.**
 ```sql
 SELECT*
@@ -161,6 +183,8 @@ FROM netflix
 WHERE casts LIKE '%Amitabh Bachchan%'
  AND release_year > EXTRACT(YEAR FROM CURRENT_DATE) -10;
 ```
+**objective**: Count the number of movies featuring 'Salman Khan' in the last 10 years.
+
 14.**Find the top 10 actors who have appeared in the highest number of movies produced in india.**
 ```sql
 SELECT
@@ -172,6 +196,8 @@ GROUP BY actor
 ORDER BY COUNT(*) DESC
 LIMIT 10;
 ```
+**objective**: Identify the top 10 actors with the most appearances in Indian-produced movies.
+
 15.**Categorize content based on the presence of 'Kill' and 'Violence' keywords.**
 ```sql
 SELECT
@@ -187,3 +213,4 @@ SELECT
  ) AS categorized_content
  GROUP BY category;
 ```
+**objective**: Categorize content as 'Bad' if it contains 'kill' or 'violence' and 'Good' otherwise. Count the number of items in each category.
