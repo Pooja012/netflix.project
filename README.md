@@ -45,6 +45,8 @@ count(*) as total_content
 FROM netflix
 GROUP BY TYPE;
 ```
+**objective**: Determine the distribution of content types on Netflix.
+
 2.**Find the most commom rating for movies and TV shows**
 ```sql
 WITH RatingCounts AS(
