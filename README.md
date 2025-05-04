@@ -13,7 +13,8 @@ This project involves a comprehensive analysis of Netflix's movies and TV shows 
 
 The data for this project is sourced from kaggle dataset:
 - **Dataset Link:** [Movies Dataset](https://www.kaggle.com/datasets/shivamb/netflix-shows?resource=download)
-
+## Dashboard
+- <a href="https://github.com/Pooja012/netflix.project/blob/main/Book1.twbx">Dashboard</a>
 ## Schema
 ```sql
 DROP TABLE IF EXISTS netflix;
