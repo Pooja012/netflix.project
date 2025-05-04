@@ -223,5 +223,6 @@ SELECT
 - **Content Categorization:**  Categorizing content based on specific keywords helps in understanding the nature of content available on Netflix.
 
 This analysis provides a comprehensive view of Netflix's content and can help inform content strategy and decision-making.
-
+## Dash Board
+![image](https://github.com/Pooja012/netflix.project/blob/main/Netflix.png)
 **Thank you**
